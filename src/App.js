@@ -22,11 +22,14 @@ import CreateLetter from './CreateLetter'
 import WorkerSaveLetter from './WorkerSaveLetter'
 import EmployerSaveLetter from './EmployerSaveLetter'
 import { create } from 'ipfs-core'
+import {db} from './db'
+import { useLiveQuery } from "dexie-react-hooks";
 
 function Main() {
   const { apiState, apiError, keyringState } = useSubstrateState()
   const [ipfs, setIpfs] = useState(null)
   const [tabIndex, setTabIndex] = useState(0)
+
   // Initilize an IPFS instance
   useEffect(() => {
     async function fetchData() {
@@ -42,6 +45,9 @@ function Main() {
     }
     fetchData()
   }, [ipfs])
+
+  const issuedRecommendations = useLiveQuery(() => db.issuedRecommendations.toArray(), []);
+  if (!issuedRecommendations) return null
 
   const loader = text => (
     <Dimmer active>
@@ -91,7 +97,7 @@ function Main() {
   ]
   const handleChange = (e, data) => setTabIndex(data.activeIndex)
   const RoleSelector = () => (
-    <Tab panes={panes} defaultActiveIndex={tabIndex} onTabChange={handleChange}/>
+    <Tab panes={panes} defaultActiveIndex={tabIndex} onTabChange={handleChange} />
   )
 
   return (
