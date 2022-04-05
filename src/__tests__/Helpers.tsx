@@ -1,4 +1,4 @@
-// Tests for '../helpers.mjs'
+// Tests for '../helpers.tsx'
 import { numberToU8ArrayOfLength, getPublicDataToSignByReferee, getDataToSignByWorker } from '../helpers.mjs';
 
 describe('numberToU8ArrayOfLength', () => {

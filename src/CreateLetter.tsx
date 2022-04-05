@@ -13,9 +13,9 @@ import { Form, Input, TextArea, Grid, Button, Modal } from 'semantic-ui-react'
 import { useSubstrateState } from './substrate-lib'
 import QRCode from 'qrcode.react'
 import { web3FromSource } from '@polkadot/extension-dapp'
-import { sign, getPublicDataToSignByReferee, getPrivateDataToSignByReferee } from './helpers.mjs'
+import { sign, getPublicDataToSignByReferee, getPrivateDataToSignByReferee } from './helpers.jsx'
 import { hexToU8a, u8aToHex } from '@polkadot/util'
-import { getIPFSContentID } from './helpers.mjs'
+import { getIPFSContentID } from './helpers.jsx'
 
 export default function Main(props) {
   const { currentAccount } = useSubstrateState()
