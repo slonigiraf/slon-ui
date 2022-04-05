@@ -1,5 +1,6 @@
 // Tests for '../helpers.tsx'
-import { numberToU8ArrayOfLength, getPublicDataToSignByReferee, getDataToSignByWorker } from '../helpers';
+import { numberToU8ArrayOfLength, getPublicDataToSignByReferee, getDataToSignByWorker } from '../helpers.js';
+import '@testing-library/jest-dom';
 
 describe('numberToU8ArrayOfLength', () => {
   it('length is 4 (as Rust u32 conversion)', () => {

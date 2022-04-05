@@ -6,6 +6,8 @@
 // import ReactDOM from 'react-dom';
 // import App from '../App';
 
+import '@testing-library/jest-dom';
+
 describe('App Test Suite', () => {
   it('renders without crashing', () => {
     // const div = document.createElement('div');

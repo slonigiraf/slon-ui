@@ -1,10 +1,10 @@
 // Tests that can't be run by Nest due to limitations in polkadot utils.
-import { sign } from './helpers.mjs'
+import { sign } from './helpers.js'
 import { signatureVerify } from '@polkadot/util-crypto'
 import { cryptoWaitReady } from '@polkadot/util-crypto'
 import { Keyring } from '@polkadot/keyring'
 import { hexToU8a } from '@polkadot/util'
-import { getPublicDataToSignByReferee } from './helpers.mjs'
+import { getPublicDataToSignByReferee } from './helpers.js'
 
 await cryptoWaitReady()
 
