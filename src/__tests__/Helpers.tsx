@@ -1,5 +1,5 @@
 // Tests for '../helpers.tsx'
-import { numberToU8ArrayOfLength, getPublicDataToSignByReferee, getDataToSignByWorker } from '../helpers.mjs';
+import { numberToU8ArrayOfLength, getPublicDataToSignByReferee, getDataToSignByWorker } from '../helpers.tsx';
 
 describe('numberToU8ArrayOfLength', () => {
   it('length is 4 (as Rust u32 conversion)', () => {
