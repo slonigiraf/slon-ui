@@ -40,7 +40,7 @@ export default function Main(props) {
             <QrReader
               onResult={(result, error) => {
                 // console.log("Result: " + result)
-                if (result != undefined) {
+                if (result !== undefined) {
                   storeLetter(result?.text)
                 }
                 if (!error) {
