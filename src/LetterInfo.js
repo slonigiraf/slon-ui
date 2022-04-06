@@ -2,7 +2,7 @@
 import { Grid, Button, Modal } from 'semantic-ui-react'
 import React, { useState, useEffect } from 'react'
 import SignLetterUseRight from './SignLetterUseRight'
-import { getIPFSDataFromContentID } from './helpers.js'
+import { getIPFSDataFromContentID } from './helpers.ts'
 
 export default function Main(props) {
   const [modalIsOpen, setModalIsOpen] = useState(false)

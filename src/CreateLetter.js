@@ -13,9 +13,9 @@ import { Form, Input, TextArea, Grid, Button, Modal } from 'semantic-ui-react'
 import { useSubstrateState } from './substrate-lib'
 import QRCode from 'qrcode.react'
 import { web3FromSource } from '@polkadot/extension-dapp'
-import { sign, getPublicDataToSignByReferee, getPrivateDataToSignByReferee } from './helpers.js'
+import { sign, getPublicDataToSignByReferee, getPrivateDataToSignByReferee } from './helpers.ts'
 import { hexToU8a, u8aToHex } from '@polkadot/util'
-import { getIPFSContentID } from './helpers.js'
+import { getIPFSContentID } from './helpers.ts'
 
 export default function Main(props) {
   const { currentAccount } = useSubstrateState()
@@ -69,6 +69,8 @@ export default function Main(props) {
     const refereeSignOverReceipt = u8aToHex(sign(referee, reciept))
     
     result.push(refereeSignOverReceipt)
+    console.log("privateData", privateData)
+    console.log("reciept", reciept)
     return result.join(",")
   }
 

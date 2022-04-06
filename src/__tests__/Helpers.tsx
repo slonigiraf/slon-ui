@@ -1,5 +1,5 @@
 // Tests for '../helpers.tsx'
-import { numberToU8ArrayOfLength, getPublicDataToSignByReferee, getDataToSignByWorker } from '../helpers.js';
+import { numberToU8ArrayOfLength, getPublicDataToSignByReferee, getDataToSignByWorker } from '../helpers';
 import '@testing-library/jest-dom';
 
 describe('numberToU8ArrayOfLength', () => {

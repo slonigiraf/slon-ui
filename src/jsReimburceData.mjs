@@ -3,7 +3,7 @@
 import { ApiPromise } from '@polkadot/api'
 import { Keyring } from '@polkadot/keyring'
 import { u8aToHex } from '@polkadot/util'
-import { sign, getPublicDataToSignByReferee, getDataToSignByWorker } from './helpers.js'
+import { sign, getPublicDataToSignByReferee, getDataToSignByWorker } from './helpers.ts'
 
 async function main() {
   const insurance_id = 0

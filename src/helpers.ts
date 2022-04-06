@@ -1,4 +1,7 @@
+import { IKeyringPair } from '@polkadot/types/types'
 import { numberToU8a, stringToU8a } from '@polkadot/util'
+import { CID } from 'ipfs-core'
+import { IPFS } from 'ipfs-core'
 
 // Converts a JS number to a byte array of specified length
 export function numberToU8ArrayOfLength(number: number, length: number) {
@@ -24,16 +27,16 @@ export function getDataToSignByWorker(letterId: number, refereeU8: Uint8Array, w
     return new Uint8Array([...numberToU8ArrayOfLength(letterId, 4), ...refereeU8, ...workerU8, ...numberToU8ArrayOfLength(amount, 16), ...refereeSignatureU8, ...employerU8])
 }
 // Just signs data
-export function sign(signer, data) {
+export function sign(signer: IKeyringPair, data: Uint8Array) {
     return signer.sign(data)
 }
 // A helper wrapper to get IPFS CID from a text
-export async function getIPFSContentID(ipfs, content) {
+export async function getIPFSContentID(ipfs: IPFS, content: string) {
     const file = await ipfs.add(content)
     return file.cid
 }
 // A helper wrapper to get a text from IPFS CID
-export async function getIPFSDataFromContentID(ipfs, cid) {
+export async function getIPFSDataFromContentID(ipfs: IPFS, cid: CID) {
     const text = []
     for await (const chunk of ipfs.cat(cid)) {
         text.push(chunk)

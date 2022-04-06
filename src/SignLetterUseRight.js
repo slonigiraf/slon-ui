@@ -4,7 +4,7 @@ import { Form, Input, Grid, Button, List, Label } from 'semantic-ui-react'
 import { useSubstrateState } from './substrate-lib'
 import QRCode from 'qrcode.react'
 import { web3FromSource } from '@polkadot/extension-dapp'
-import { sign, getDataToSignByWorker } from './helpers.js'
+import { sign, getDataToSignByWorker } from './helpers.ts'
 import { hexToU8a, u8aToHex } from '@polkadot/util'
 
 
